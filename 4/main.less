@@ -1,0 +1,405 @@
+@pozadina-nav: #e2c7d8;
+@pozadina-nav-hover:rgba(186, 54, 190, 0.719);
+@boja-moto:#773366;
+@pozadina-centralnog-sadrzaja: #f8c6ed;
+@pozadina-proizvoda:rgb(253, 243, 253);
+@pozadina-footera: #f1e0f065;
+@osnovni-font: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+@opis-font: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+.border-radius(@param1, @param2)
+{
+  border-radius: @param1;
+  margin: @param2;
+  padding: @param2;
+}
+
+*
+{
+  box-sizing: border-box;
+  font-family: @osnovni-font;
+}
+
+body{
+  background: url("../images/perfume-line-pattern.jpg");
+}
+
+.container
+{
+  width: 80%;
+  margin:0 auto;
+}
+
+.header
+{
+  padding: 10px;
+  img
+  {
+    width: 150px;
+    height: 150px;
+  }
+}
+
+.moto
+{
+  display: inline-block;
+  p
+  {
+    font-style: oblique;
+    font-size: 60px;
+    margin: 0;
+    color: @boja-moto;
+  }
+}
+
+h1
+{
+  font-size: 18px;
+}
+h2
+{
+  font-size: 15px;
+}
+h3
+{
+  font-size: 13px;
+}
+
+ul
+{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  li
+  {
+    display: inline-block;
+    width: 20%;
+    background-color: @pozadina-nav;
+    height: 40px;
+    a
+    {
+      display: block;
+      text-decoration: none;
+      text-align: center;
+      font-size: 30px;
+      :hover{
+        background-color: @pozadina-nav-hover;
+      }
+    }
+  }
+}
+
+.hamburger
+{
+  width: 50px;
+  height: 50px;
+  background-color: @pozadina-nav-hover;
+  padding:10px;
+  display: none;
+  .line
+  {
+    width: 80%;
+    margin-left: 5px;
+    margin-top: 5px;
+    background-color: @pozadina-nav;
+    height: 5px;
+  }
+}
+
+.centralniSadrzaj
+{
+  padding: 20px;
+  margin-top: 30px;
+  background-color: @pozadina-centralnog-sadrzaja;
+}
+
+.leviSidebar, .desniSidebar
+{
+  vertical-align: top;
+  width:15%;
+  display: inline-block;
+}
+
+.leviSidebar img
+{
+  width:100%;
+}
+
+.content
+{
+  display: none;
+}
+
+.centralniDeo
+{
+  width: 65%;
+  display: inline-block;
+  img
+  {
+    width: 30%;
+    position: relative;
+  }
+  .samo-proizvodi
+  {
+    display: flex;
+    flex-direction: column;
+  }
+  .gornji, .donji
+  {
+    display: table;
+    margin: 5px;
+  }
+}
+
+.proizvod
+{
+  position: relative;
+  width: 30%;
+  display: table-cell;
+  background-color: @pozadina-proizvoda;
+  border: 5px solid @pozadina-centralnog-sadrzaja;
+  .border-radius(20px, 5px);
+
+  hr
+  {
+    width: 100%;
+  }
+  .opis
+  {
+    flex: 1 1 auto;
+  }
+  .donji-opis
+  {
+    align-items: flex-end;
+  }
+}
+
+.cena-kolicina
+{
+  position: relative;
+  input[type=text]
+  {
+    resize: vertical;
+    box-sizing: border-box;
+  }
+}
+
+.tekst-o-nama
+{
+  width: 95%;
+  font-weight: 300;
+  font-size: 18px;
+  font-family: @opis-font;
+  margin-left: 10px;
+  color: darkslateblue;
+}
+.footer
+{
+  text-align: center;
+  height: 120px;
+  font-size: 15px;
+  background-color: @pozadina-footera;
+}
+
+.galerija
+{
+  justify-items: center;
+}
+
+.kontaktiraj
+{
+  margin-left: 20px;
+  justify-items: left;
+  display: inline-block;
+  width: 45%;
+}
+
+.mapa
+{
+  margin: 10px;
+  padding: 10px;
+}
+
+.row > .column {
+  padding: 0 8px;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Create four equal columns that floats next to eachother */
+.column {
+  float: left;
+  width: 25%;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: black;
+}
+
+/* Modal Content */
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 0;
+  width: 90%;
+  max-width: 1200px;
+}
+
+/* The Close Button */
+.close {
+  color: white;
+  position: absolute;
+  top: 10px;
+  right: 25px;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #999;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Hide the slides by default */
+.mySlides {
+  display: none;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* Caption text */
+.caption-container {
+  text-align: center;
+  background-color: black;
+  padding: 2px 16px;
+  color: white;
+}
+
+img.demo {
+  opacity: 0.6;
+}
+
+.active,
+.demo:hover {
+  opacity: 1;
+}
+
+img.hover-shadow {
+  transition: 0.3s;
+}
+
+.hover-shadow:hover {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+@media only screen and (max-width:1024px)
+{
+  .proizvod:nth-child(odd)
+  {
+    background-color: @boja-moto;
+    color: #fff;
+
+  }
+  .nav
+  {
+    display: none;
+  }
+  ul li {
+    display: block;
+    width: 40%;
+  }
+  .hamburger
+  {
+    display: block;
+  }
+  .gornji, .donji, .desniSidebar {
+    display: block;
+  }
+  .proizvod
+  {
+    display: inline-block;
+    width: 100%;
+  }
+
+  .centralniDeo
+  {
+    width: 60%;
+  }
+
+  .leviSidebar
+  {
+    width: 30%;
+  }
+}
+@media only screen and (max-width:800px)
+{
+
+  .gornji, .donji, .desniSidebar .leviSidebar{
+    display: block;
+  }
+  .proizvod
+  {
+    display: inline-block;
+    width: 100%;
+  }
+
+  .centralniDeo, .leviSidebar, .desniSidebar
+  {
+    width: 100%;
+  }
+
+}
